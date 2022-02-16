@@ -1,17 +1,24 @@
 package com.heypli.springboottest.app.book.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table
 public class Book {
+
+    @Id
+    @GeneratedValue
     private Integer               idx;
+
+    @Column
     private String               title;
+
+    @Column
     private LocalDateTime publishedAt;
 
     @Builder
